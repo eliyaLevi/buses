@@ -1,0 +1,32 @@
+[
+  {
+    "lineNumber": "437",
+    "name": "Jerusalem",
+    "stations": ["a", "b", "c"],
+    "schedule": [
+      { "departureTime": "08:00", "arrivalTime": "08:10", "station": "a" },
+      { "departureTime": "08:10", "arrivalTime": "08:20", "station": "b" },
+      { "departureTime": "08:20", "arrivalTime": "08:30", "station": "c" }
+    ]
+  },
+  {
+    "lineNumber": "280",
+    "name": "Ashdod",
+    "stations": ["a", "b", "c"],
+    "schedule": [
+      { "departureTime": "08:00", "arrivalTime": "08:10", "station": "a" },
+      { "departureTime": "08:10", "arrivalTime": "08:20", "station": "b" },
+      { "departureTime": "08:20", "arrivalTime": "08:30", "station": "c" }
+    ]
+  },
+  {
+    "lineNumber": "556",
+    "name": "Bnei Brak",
+    "stations": ["a", "b", "c"],
+    "schedule": [
+      { "departureTime": "08:00", "arrivalTime": "08:10", "station": "a" },
+      { "departureTime": "08:10", "arrivalTime": "08:20", "station": "b" },
+      { "departureTime": "08:20", "arrivalTime": "08:30", "station": "c" }
+    ]
+  }
+]

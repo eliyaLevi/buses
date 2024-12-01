@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Rafael Cohen",
+    "email": "rafaelcohen@example.com",
+    "password": "123",
+    "role": "driver"
+  },
+  {
+    "name": "Eliya Levi",
+    "email": "El111@example.com",
+    "password": "456",
+    "role": "admin"
+  },
+  {
+    "name": "Miki Levi",
+    "email": "mk222@example.com",
+    "password": "789",
+    "role": "passenger"
+  }
+]
