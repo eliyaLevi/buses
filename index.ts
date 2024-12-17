@@ -8,7 +8,7 @@ import chalk from "chalk";
 import loadInitialData from "./src/initailData";
 import { Server } from "socket.io";
 import http, { createServer } from "http";
-import mainSocket from "./src/sockets/mainSocket";
+// import mainSocket from "./src/sockets/mainSocket";
 
 const app: Express = express();
 
@@ -32,7 +32,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(router);
 
-mainSocket(io);
+// mainSocket(io);
 
 // התחברות ל-MongoDB עם לוגים צבעוניים
 mongoose
