@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import User from "./models/usersModel"; // Your User model
 import bus from "./models/busesModel"; // Your User model
 import route from "./models/routesModel"; // Your User model
+import rooms from "./models/roomModel"; // Your User model
 
 /**
  * Encrypts passwords for all users in the provided data array.
@@ -30,6 +31,7 @@ async function loadInitialData() {
   const userData = JSON.parse(fs.readFileSync("./data/users.json", "utf8"));
   const busData = JSON.parse(fs.readFileSync("./data/buses.json", "utf8"));
   const routeData = JSON.parse(fs.readFileSync("./data/routes.json", "utf8"));
+  const roomsData = JSON.parse(fs.readFileSync("./data/rooms.json", "utf8"));
 
   // Check if the database is empty
   if ((await User.countDocuments()) === 0) {
@@ -53,6 +55,13 @@ async function loadInitialData() {
     console.log("Initial routes have been added to the database.");
   } else {
     console.log("routes already exist in the database.");
+  }
+
+  if ((await rooms.countDocuments()) === 0) {
+    await rooms.insertMany(roomsData);
+    console.log("Initial rooms have been added to the database.");
+  } else {
+    console.log("rooms already exist in the database.");
   }
 }
 

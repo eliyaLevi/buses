@@ -12,6 +12,7 @@ router.use("/users", usersContoller);
 router.use("/buses", BusesController);
 router.use("/routs", routesController);
 router.use("/auth", authController);
+
 // router.use("/admin-role", verifyAdmin as NextFunction, dataContoller);
 
 router.use((req: Request, res: Response) => {

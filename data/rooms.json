@@ -1,0 +1,15 @@
+[
+  {
+    "roomName": "כיתת חרמון",
+    "massages": [
+      { "userName": "אליה", "message": "מה המצב ?", "timaStamp": "10/08/2024" }
+    ]
+  },
+  {
+    "roomName": "כיתת הר גריזים",
+    "massages": [
+      { "userName": "מיקי", "message": "בוקר טוב", "timaStamp": "10/08/2024" },
+      { "userName": "ראבן", "message": "כל המחלות", "timaStamp": "10/08/2024" }
+    ]
+  }
+]

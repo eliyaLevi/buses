@@ -1,8 +1,22 @@
 import express, { IRouter, Request, Response } from "express";
-import { login, logout } from "../services/authService";
+import { login, logout, verifyRefreshService } from "../services/authService";
 import { handleError } from "../../utils/ErrorHandle";
 
 const router: IRouter = express.Router();
+
+router.post(
+  "/verifyRefresh/:role",
+  async (req: Request, res: Response): Promise<void> => {
+    try {
+      const { role } = req.params;
+      const user = await verifyRefreshService(req, res, role);
+      res.json(user);
+    } catch (error: any) {
+      console.error(error.message);
+      handleError(res, error.status, error.message);
+    }
+  }
+);
 
 router.post("/login", async (req: Request, res: Response): Promise<void> => {
   try {
@@ -15,7 +29,6 @@ router.post("/login", async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-
 router.post("/logout", (req: Request, res: Response): void => {
   try {
     logout(res);
@@ -24,4 +37,5 @@ router.post("/logout", (req: Request, res: Response): void => {
     console.error(error.message);
   }
 });
+
 export default router;

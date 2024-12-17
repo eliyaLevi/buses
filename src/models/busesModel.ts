@@ -27,12 +27,12 @@ const BusesSchema: Schema = new Schema(
     },
     driverId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: usersModel,
+      ref: "users",
       required: true,
     },
     routId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: routesModel,
+      ref: "routes",
       required: true,
     },
     updateAt: {

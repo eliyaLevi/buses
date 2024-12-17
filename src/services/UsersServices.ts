@@ -80,4 +80,27 @@ const deleteUser = async (userId: string) => {
   }
 };
 
-export { addUser, getAllUsers, getUserById, patchUser, deleteUser };
+const getUsersByCall = async (page: number = 1, limit: number = 10) => {
+  try {
+    const skip = (page - 1) * limit;
+    const users = await usersModel.find().skip(skip).limit(limit);
+    const totalUsers = await usersModel.countDocuments();
+    return {
+      users,
+      totalPages: Math.ceil(totalUsers / limit),
+      currentPage: page,
+      totalUsers,
+    };
+  } catch (error: any) {
+    return handleBadRequest("MongoDB", error);
+  }
+};
+
+export {
+  addUser,
+  getAllUsers,
+  getUserById,
+  patchUser,
+  deleteUser,
+  getUsersByCall,
+};

@@ -23,7 +23,11 @@ const addBus = async (dataBus: IBuses) => {
 
 const getAllBuses = async () => {
   try {
-    const buses = await busesModel.find();
+    const buses = await busesModel
+      .find()
+      .populate("driverId")
+      .populate("routId")
+      .exec();
     return buses;
   } catch (error: any) {
     return handleBadRequest("MongoDB", error);
@@ -32,7 +36,11 @@ const getAllBuses = async () => {
 
 const getBusById = async (busId: string) => {
   try {
-    const bus = await busesModel.findById(busId);
+    const bus = await busesModel
+      .findById(busId)
+      .populate("driverId")
+      .populate("routId")
+      .exec();
     if (!bus) {
       throw new Error("bus not found");
     }
@@ -48,7 +56,6 @@ const patchBus = async (busId: string, updateData: Partial<IBuses>) => {
     if (!existingBus) {
       throw new Error("bus not found");
     }
-
     const updatedBus = await busesModel.findByIdAndUpdate(
       busId,
       {

@@ -1,6 +1,6 @@
-import { CookieOptions, Response } from "express";
+import { CookieOptions, Response, Request } from "express";
 import { comparePassword } from "../../helpers/bcrypt";
-import { generateAuthToken } from "../../helpers/jwt";
+import { generateAuthToken, verifyRefresh } from "../../helpers/jwt";
 import Users from "../models/usersModel";
 import { handleBadRequest } from "../../utils/ErrorHandle";
 
@@ -61,4 +61,18 @@ const logout = (res: Response) => {
     return handleBadRequest("Logout Error", error);
   }
 };
-export { login, logout };
+
+const verifyRefreshService = async (
+  req: Request,
+  res: Response,
+  role: string
+) => {
+  try {
+    const user = verifyRefresh(req, res, role);
+    return user;
+  } catch (error: any) {
+    error.status = 400;
+    return handleBadRequest("MongoDB", error);
+  }
+};
+export { login, logout, verifyRefreshService };

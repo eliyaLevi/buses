@@ -16,5 +16,53 @@
     "email": "mk222@example.com",
     "password": "789",
     "role": "passenger"
+  },
+  {
+    "name": "kobi Levi",
+    "email": "mk25522@example.com",
+    "password": "789",
+    "role": "passenger"
+  },
+  {
+    "name": "avi Levi",
+    "email": "mk22222@example.com",
+    "password": "789",
+    "role": "passenger"
+  },
+  {
+    "name": "eli Levi",
+    "email": "77@example.com",
+    "password": "789",
+    "role": "passenger"
+  },
+  {
+    "name": "yaki Levi",
+    "email": "88@example.com",
+    "password": "789",
+    "role": "passenger"
+  },
+  {
+    "name": "moshe Levi",
+    "email": "99@example.com",
+    "password": "789",
+    "role": "passenger"
+  },
+  {
+    "name": "dan Levi",
+    "email": "12333@example.com",
+    "password": "789",
+    "role": "passenger"
+  },
+  {
+    "name": "gal Levi",
+    "email": "444@example.com",
+    "password": "789",
+    "role": "passenger"
+  },
+  {
+    "name": "shira Levi",
+    "email": "666@example.com",
+    "password": "789",
+    "role": "passenger"
   }
 ]
