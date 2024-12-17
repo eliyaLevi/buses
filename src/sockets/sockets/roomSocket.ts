@@ -22,12 +22,12 @@ const roomSocket = (io: Server, socket: Socket) => {
         io.to(roomName).emit("receiveMessage", {
           userName,
           message,
-          timeStamp: new Date().toISOString(),
+          timestamp: new Date().toISOString(),
         });
         patchRoom(roomName, {
           userName,
           message,
-          timeStamp: new Date().toISOString(),
+          timestamp: new Date().toISOString(),
         });
       });
     } catch (error) {

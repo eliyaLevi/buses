@@ -3,6 +3,6 @@ import { Document } from "mongoose";
 export interface IMessage extends Document {
   userName: string;
   message: string;
-  timastamp: string;
+  timestamp: string;
 }
 export default IMessage;
